@@ -11,7 +11,7 @@ provider "azurerm"{
 }
 
 #resource group cration
-resouce "azurerm_resource_group" {
+resource "azurerm_resource_group" {
     name     = "vennela"
     location = "east us"
 }
