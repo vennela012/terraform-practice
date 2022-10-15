@@ -1,0 +1,18 @@
+pipeline{
+    agent { label 'node' }
+    stages {
+        stage ('vcs') {
+            steps {
+                git url: 'https://github.com/vennela012/terraform-practice.git',
+                branch: 'main'
+            }
+        } 
+        stage ('terraform az') {
+            steps {
+                sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+}
